@@ -286,11 +286,12 @@ commands:
         title: ✅ Prompt sent
 dm:
   closed:
-    archived: Use the `/transcript` command in **{guild}** to view the archived messages.
     fields:
       closed:
         name: Closed at
-        value: "{timestamp} (after {duration})"
+        value: |-
+          {timestamp}
+          (after {duration})
       closed_by: Closed by
       created: Created at
       feedback: Your feedback
@@ -334,6 +335,7 @@ log:
   ticket:
     added: Added members
     description: "{user} {verb} a ticket"
+    reason: Reason
     removed: Removed members
     ticket: Ticket
     title: Ticket {verb}
@@ -396,6 +398,14 @@ misc:
   not_ticket:
     description: You can only use this command in tickets.
     title: ❌ This isn't a ticket channel
+  permissions_error:
+    description: Sorry, the operation failed due to insufficient permissions.
+    fields:
+      for_admins:
+        name: For server administrators
+        value: >
+          [Click here]({url}) for resolution instructions.
+    title: ⚠️ Something went wrong
   ratelimited:
     description: Try again in a few seconds.
     title: 🐢 Please slow down
